@@ -1,4 +1,3 @@
-
 /*
 SELECTION SORT
 - takes in a list of integers
@@ -7,7 +6,7 @@ SELECTION SORT
 - repeats this on the unsorted portion
 
 - Time complexity: O(n^2)
-- Space complexity: in-place comparson sort, O(n)
+- Space complexity: in-place comparison sort, O(n)
 */
 
 let array = [1, 5, 9, 2, 7, 4]
