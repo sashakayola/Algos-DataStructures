@@ -1,12 +1,12 @@
 /*
 SELECTION SORT
-- takes in a list of integers
+- takes in an array of integers
 - iterates once through list to find largest element
 - moves largest element to end of list
 - repeats this on the unsorted portion
 
 - Time complexity: O(n^2)
-- Space complexity: in-place comparison sort, O(n)
+- Space complexity: in-place comparison sort, O(1)
 */
 
 let array = [1, 5, 9, 2, 7, 4]
