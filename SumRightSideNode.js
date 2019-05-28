@@ -7,7 +7,7 @@ class Node {
 }
 
 function sumOfRightLeaves(root) {
-  if (!root.value) {
+  if (!root.val) {
     return 0;
   }
   
