@@ -1,3 +1,7 @@
+// Breadth first search is level order graph traversal utilizing a queue
+// Time complexity: O(n) - visiting a node (reading its data and enqueue) is constant and we visit each node once
+// Space: O(n) to store each node in the queue
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -6,7 +10,7 @@ class Node {
   }
 }
 
-// breadthFirstSearch is level order graph traversal utilizing a queue
+// ITERATIVE APPROACH
 function breadthFirstSearch(root) {
   if (root.value === null) {
    	return;
@@ -22,15 +26,17 @@ function breadthFirstSearch(root) {
     console.log(nodeToProcess.val);
     
     // after you process it, add it's children to the queue
-    if (nodeToProcess.left !== null) {
+    if (nodeToProcess.left) {
       queue.push(nodeToProcess.left);
     }
-    if (nodeToProcess.right !== null) {
+    if (nodeToProcess.right) {
       queue.push(nodeToProcess.right);
     }
     // repeat the above steps until the queue is empty
   }
 }
+
+// RECURSIVE APPROACH
 
 const root = new Node(5);
 root.left = new Node(10);
