@@ -37,6 +37,22 @@ function breadthFirstSearch(root) {
 }
 
 // RECURSIVE APPROACH
+function breadthFirstSearch(root, queue=[root]) {
+  let nodeToProcess = queue.shift();
+
+  if (!nodeToProcess) return;
+
+  console.log(nodeToProcess.val);
+  
+  if (nodeToProcess.left) {
+    queue.push(nodeToProcess.left);
+  }
+  if (nodeToProcess.right) {
+    queue.push(nodeToProcess.right);
+  }
+
+  breadthFirstSearch(nodeToProcess, queue)
+}
 
 const root = new Node(5);
 root.left = new Node(10);
