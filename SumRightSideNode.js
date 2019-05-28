@@ -1,3 +1,5 @@
+// PROBLEM: find the sum of all right leaves in a BST; leaves are nodes that do not have any left or right children nodes
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -6,6 +8,7 @@ class Node {
   }
 }
 
+// My solution below uses breadth first search to traverse all the nodes and then adds the value of all right leaves that do not have children nodes as I traverse
 function sumOfRightLeaves(root) {
   if (!root.val) {
     return 0;
