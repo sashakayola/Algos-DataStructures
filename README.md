@@ -1,2 +1,2 @@
 # Sorting-Algos-Data-Structures
-My implementation of various sorting algorithms and data structures!
+My implementation of various algorithm problems and data structures!
