@@ -22,7 +22,7 @@ function breadthFirstSearch(root) {
     console.log(nodeToProcess.val);
     
     // after you process it, add it's children to the queue
-		if (nodeToProcess.left !== null) {
+    if (nodeToProcess.left !== null) {
       queue.push(nodeToProcess.left);
     }
     if (nodeToProcess.right !== null) {
