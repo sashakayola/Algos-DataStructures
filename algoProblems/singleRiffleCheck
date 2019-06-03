@@ -1,6 +1,8 @@
 // PROBLEM: Write a method to tell us if a full deck of cards shuffledDeck is a single riffle of two other halves half1 and half2
 // TIME: O(n) because we need to go through the entire deck, O(1) constant space
 
+// APPROACH: go through each card in the shuffled pile. at the same time, go through both half1 and half2. for each card that you flip (look at) in the shuffled pile,
+// check to make sure it is the next card that appears in either half1 or half2. if not, then return false (the decks have been riffled more than once)
 function riffler(half1, half2, shuffled) {
   let firstIndex = 0;
   let secondIndex = 0;
