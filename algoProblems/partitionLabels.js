@@ -1,13 +1,12 @@
 // PROBLEM: A string S of lowercase letters is given. Partition this string into as many parts as possible so that each letter appears in at most one part, and return a list of integers representing the size of these parts
-// TIME: O(nlogn) - iterate through the letters in the string to add to the object the first time we see each object and the last time and sort based on the first time each letter is seen
-// SPACE: O(n) need to store each letter in the object
+// TIME: O(n) - iterate through the letters in the string to add to the object the first time we see each object and the last time
 
 // APPROACH: take the string and iterate through it once; create a hash table (array of objects) with each letter from the string being the key, and the values being an array with the first time the letter appears and the last time it appears
 // sort the object by the first time each letter is seen
 // merge the objects by the last time each was seen (similar to merging meetings problem)
 // find the length of all the merged objects that remain and return those lengths
 
-function partition(str) {
+function partitionLabels(str) {
   let partitions = {};
 
   for (let i = 0; i < str.length; i++) {
@@ -19,25 +18,23 @@ function partition(str) {
     }
   }
 
-  // sort the arrays in the partitions by the first time you see the letter
-  let arrayToSort = [];
+  // create an array of arrays
+  let arrayToMerge = [];
   for (let key in partitions) {
-    arrayToSort.push(partitions[key]);
+    arrayToMerge.push(partitions[key]);
   }
 
-  let sortedArray = arrayToSort.sort((a, b) => a[0] - b[0]);
- 
-  // go through the sortedArray and merge the objects based on the last time each letter was seen
-  let mergedLetters = [sortedArray[0]];
+  // go through the arrayToMerge and merge the objects based on the last time each letter was seen
+  let mergedLetters = [arrayToMerge[0]];
 
-  for (let i = 1; i < sortedArray.length; i++) {
+  for (let i = 1; i < arrayToMerge.length; i++) {
     let lastSeenInMerged = mergedLetters[mergedLetters.length-1][1];
-    let currentFirstSeen = sortedArray[i][0];
-    let currentLastSeen = sortedArray[i][1];
+    let currentFirstSeen = arrayToMerge[i][0];
+    let currentLastSeen = arrayToMerge[i][1];
     if (currentFirstSeen < lastSeenInMerged ) {
       mergedLetters[mergedLetters.length-1][1] = Math.max(lastSeenInMerged, currentLastSeen);
     } else {
-      mergedLetters.push(sortedArray[i]);
+      mergedLetters.push(arrayToMerge[i]);
     }
   }
 
@@ -50,5 +47,3 @@ function partition(str) {
 
   return lengths;
 }
-
-console.log(partition('ababcbacadefegdehijhklij')) // [9,7,8]
