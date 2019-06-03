@@ -1,5 +1,5 @@
 // PROBLEM: A string S of lowercase letters is given. Partition this string into as many parts as possible so that each letter appears in at most one part, and return a list of integers representing the size of these parts
-// TIME: O(n) - iterate through the letters in the string to add to the object the first time we see each object and the last time
+// TIME: O(nlogn) - iterate through the letters in the string to add to the object the first time we see each object and the last time and sort based on the first time each letter is seen
 // SPACE: O(n) need to store each letter in the object
 
 // APPROACH: take the string and iterate through it once; create a hash table (array of objects) with each letter from the string being the key, and the values being an array with the first time the letter appears and the last time it appears
