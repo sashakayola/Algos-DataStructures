@@ -2,6 +2,7 @@
 // You are given a target value to search. If found in the array return its index, otherwise return -1.
 // TIME: O(logn) modified binary search
 
+// APPROACH 1: find the break point, see if the target before or after the breakpoint, then do the binary search on that half
 function search(arr, target) {
 
   // go through the array once to find the rotated point
@@ -38,6 +39,43 @@ function search(arr, target) {
     if (target === arr[midPointer]) return midPointer;
     else if (target < arr[midPointer]) rightPointer = midPointer - 1;
     else leftPointer = midPointer + 1;
+  }
+
+  return -1;
+}
+
+// APPROACH 2: slightly cleaner version of the above, still modified binary search with some extra checks to see if in left half or right half
+function search(arr, target) {
+  let leftPointer = 0;
+  let rightPointer = arr.length - 1;
+
+  while (leftPointer <= rightPointer) {
+    let mid = leftPointer + Math.floor((rightPointer - leftPointer) / 2);
+    console.log('mid',mid)
+
+    if (arr[mid] === target) return mid;
+
+    // check if in the left sorted part
+    if (arr[leftPointer] <= arr[mid]) {
+      if (target >= arr[leftPointer] && target < arr[mid]) {
+        rightPointer = mid - 1;
+      }
+      // else the target is greater than the mid
+      else {
+        leftPointer = mid + 1;
+      }
+    }
+
+    // else in the right sorted part
+    else {
+      if (target > arr[mid] && target <= arr[rightPointer]) {
+        leftPointer = mid + 1;
+      }
+      // else the target is less than the mid but greater than or equal to the left
+      else {
+        rightPointer = mid - 1;
+      }
+    }
   }
 
   return -1;
