@@ -1,6 +1,6 @@
 // Breadth first search is level order graph traversal utilizing a queue
 // Time complexity: O(n) - visiting a node (reading its data and enqueue) is constant and we visit each node once
-// Space: O(2^h) where h is the height of the tree
+// Space: O(w) where w is the width of the tree in other words O(2^h) where h is the height of the tree
 
 class Node {
   constructor(val) {
