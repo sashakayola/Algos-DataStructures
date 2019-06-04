@@ -1,0 +1,6 @@
+// PROBLEM: Cracking the coding interview page 109, problem 1
+// Route Between Nodes: Given a directed graph, design an algorithm to find out whether there is a route between two nodes
+
+// APPROACH: start at one node, and perform breath-first search until you reach node2
+// as you visit a node, mark it as visited
+
