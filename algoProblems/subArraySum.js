@@ -32,6 +32,7 @@ function subarraySum(arr, target) {
 
 // APPROACH 2: iterate through the array and calculate the running sum. at each iteration, see if the runningSum - target is in the hash
 // if it is, return true. If not, add the running sum to the hash
+// NOTE: the below solution works with negative numbers too
 function subarraySum(arr, target) {
   let sumsMap = {0: 1}; // hash of previous sums
   let sum = 0;
