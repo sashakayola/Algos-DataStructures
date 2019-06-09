@@ -1,5 +1,5 @@
 // PROBLEM: Route Between Nodes: Given a directed graph, design an algorithm to find out whether there is a
-route between two nodes. (Cracking the coding, question 4.1)
+// route between two nodes. (Cracking the coding, question 4.1)
 
 // APPROACH: breadth first search starting at node a. Return true once you reach node b or if you traversed the entire graph, return false
 // Mark visted nodes as visited to avoid cycles
