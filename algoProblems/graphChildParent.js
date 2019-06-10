@@ -21,7 +21,7 @@ function graph(arr) {
     }
 
   // TO GET ALL THE NODES WITH ONLY ONE PARENT
-    // iterate through the 0th index in each sub-array and add to a set. if we see the same number twice, delete from the set
+    // iterate through the 1st index in each sub-array and add to a set. if we see the same number twice, delete from the set
     let nodesWithOneParent = new Set();
     for (let i = 0; i < arr.length; i++) {
       let child = arr[i][1];
