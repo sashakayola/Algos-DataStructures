@@ -1,6 +1,8 @@
 // PROBLEM: Write a function to check that a binary tree is a valid binary search tree.
 
 // APPROACH: do an in-order depth first search and make sure that the result is in-order (sorted)
+// TIME: O(n) because we need to traverse the entire tree
+// SPACE: O(n) because we are storing all the values in an array to check to make sure they are sorted
 
 class BinaryTreeNode {
   constructor(value) {
