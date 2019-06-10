@@ -16,7 +16,7 @@ function graph(arr) {
     // then iterate through the array again and for each child we see, remove from the set
     // the remaining nodes in the set are the nodes with no children
     for (let i = 0; i < arr.length; i++) {
-      let child = arr[i][0];
+      let child = arr[i][1];
       nodesWithNoParents.delete(child);
     }
 
@@ -24,7 +24,7 @@ function graph(arr) {
     // iterate through the 0th index in each sub-array and add to a set. if we see the same number twice, delete from the set
     let nodesWithOneParent = new Set();
     for (let i = 0; i < arr.length; i++) {
-      let child = arr[i][0];
+      let child = arr[i][1];
       if (nodesWithOneParent.has(child)) {
         nodesWithOneParent.delete(child);
       }
