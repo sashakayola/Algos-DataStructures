@@ -2,7 +2,7 @@
 // find a legal graph coloring using at most D+1 colors
 
 // APPROACH: iterate through the graph. for each node, record all the colors of its neighbors. assign that node the first available color
-that it's neighbors don't have.
+// that it's neighbors don't have.
 // This is a greedy approach
 // TIME: O(m + n) where n is the number of nodes and m is the number of edges
 
