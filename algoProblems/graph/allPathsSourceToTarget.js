@@ -30,6 +30,7 @@ var allPathsSourceTarget = function(graph) {
       let node = stack.pop();
       let value = node[0];
       let parent = node[1];
+      // short hand for the above two lines is this: let [value, path] = stack.pop();
       let children = hash[value];
 
       if (children.length === 0) {
