@@ -24,7 +24,8 @@ var allPathsSourceTarget = function(graph) {
       // short hand for the above two lines is this: let [value, path] = stack.pop();
       let children = graph[value];
 
-      if (children.length === 0) {
+      // if you hit your target ae N-1
+      if (graph.indexOf(children) === graph.length - 1) {
         // if you hit the end of a path, add the parent path to the allPaths array
         allPaths.push(parent)
       }
