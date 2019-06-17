@@ -38,4 +38,21 @@ var allPathsSourceTarget = function(graph) {
     return allPaths;
 };
 
+// APPROACH 2: recursive DFS
+function allPathsSourceTarget(graph, start = 0, path = [0], paths = []) {
+    let children = graph[start];
+
+    // if you hit the target, push your path into your paths array
+    if (start === graph.length - 1) {
+      paths.push(path)
+    }
+    else {
+      for (let i = 0; i < children.length; i++) {
+        allPathsSourceTarget(graph, children[i], [...path,children[i]], paths)
+      }
+    }
+
+    return paths;
+};
+
 allPathsSourceTarget([[1,2], [3], [3], []]) // [[0,1,3],[0,2,3]] 
