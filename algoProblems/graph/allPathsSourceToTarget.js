@@ -11,15 +11,6 @@
 // SPACE: 2^N
 
 var allPathsSourceTarget = function(graph) {
-    // create a hash to store the value of the node and its children
-    let hash = {};
-    
-    // go through the graph and add all the parents and children to the hash
-    for (let i = 0; i < graph.length; i++) {
-        let innerArray = graph[i];
-        hash[i] = innerArray;
-    }
-
     let allPaths = [];
 
     let stack = [];
@@ -31,7 +22,7 @@ var allPathsSourceTarget = function(graph) {
       let value = node[0];
       let parent = node[1];
       // short hand for the above two lines is this: let [value, path] = stack.pop();
-      let children = hash[value];
+      let children = graph[value];
 
       if (children.length === 0) {
         // if you hit the end of a path, add the parent path to the allPaths array
