@@ -31,6 +31,11 @@ function getClosingParen(str, openingIdx) {
 }
 
 // APPROACH 2: Better!! same as above but when count reaches 0, return the index of the closing parenthesis
+// TIME: O(n) to go through the entire string at worst case
+// SPACE: O(1) constant space in this case
+// essentually using the count variable as a stack but because we are only storing the '(' characters
+// instead of storing each character as a stack, we can store the number of items are stack is holding.
+// this gets us from O(n) space to O(1) space
 
 function getClosingParen2(str, openingIdx) {
   let count = 0;
