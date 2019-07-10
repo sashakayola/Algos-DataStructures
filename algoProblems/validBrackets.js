@@ -2,6 +2,7 @@
 // APPROACH: use a stack to keep track of the paren. once we reach a valid pair, pop off the stack
 // TIME: O(n) because iterate through the entire code 
 // SPACE: O(n) in worst case (if only opening or closing brackets, would have to store entire code on the stack)
+// (if this problem only has one type of bracket, can use a counter instead of a stack)
 
 function isValid(code) {
   let stack = [];
