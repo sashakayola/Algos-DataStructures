@@ -69,4 +69,4 @@ function isValid2(code) {
   return openingStack.length === 0;
 }
 
-console.log(isValid2('()('))
+console.log(isValid2('()'))
