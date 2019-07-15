@@ -17,15 +17,15 @@ function r7() {
     [7, 0, 0, 0, 0],
   ];
 
-  let roll1 = r5();
-  let roll2 = r5();
+  let num = 0;
 
-  while (results[roll1][roll2] === 0) {
-    let roll1 = r5();
-    let roll2 = r5();
+  while (num === 0) {
+    let resultFromFive = r5();
+    let resultFromFive2 = r5();
+    num = results[resultFromFive][resultFromFive2];
   }
 
-  return results[roll1][roll2];
+  return num;
 }
 
 r7();
