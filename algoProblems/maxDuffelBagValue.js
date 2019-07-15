@@ -17,6 +17,8 @@
 // TIME: O(n*m) where n is the capacity goal and m is the cakeTypes
 // SPACE: O(n) where n is the capacity
 
+// We loop through each cake n for every capacity k, so our runtime is O(n*k), and maintaining the array of k+1k+1 capacities gives us the O(k)O(k) space.
+
 function maxDuffelBagValue(cakeTypes, capacity) {
   let maxValues = new Array(capacity + 1).fill(0);
 
