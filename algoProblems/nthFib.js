@@ -43,10 +43,7 @@ function fib3(n) {
   // base case is when n is 0 or 1
   if (n === 0 || n === 1) return n;
 
-  if (memo.hasOwnProperty(n)) {
-    return memo[n];
-  }
-  else {
+  if (!memo.hasOwnProperty(n)) {
     let result = fib(n-1) + fib(n-2);
     memo[n] = result;
   }
