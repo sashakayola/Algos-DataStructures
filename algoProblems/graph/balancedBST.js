@@ -25,6 +25,14 @@ class BinaryTreeNode {
 // TIME: O(n) at worst case we will have to look at all the leaves but we will do an iterative approach with BFS to avoid space on the callstack
 // SPACE: O(n)
 
+// Complexity explanation from interview cake: For time, the worst case is the tree is balanced and we have to iterate over all nn nodes to make sure.
+// For the space cost, we have two data structures to watch: depths and nodes.
+// depths will never hold more than three elements, so we can write that off as O(1).
+// Because we’re doing a depth first search, nodes will hold at most d nodes where d is the depth of the tree (the number of levels in the tree from the root node down to the lowest node). So we could say our space cost is O(d).
+// But we can also relate dd to nn. In a balanced tree, d is O(logbase2(n)). And the more unbalanced the tree gets, the closer d gets to n.
+// In the worst case, the tree is a straight line of right children from the root where every node in that line also has a left child. The traversal will walk down the line of right children, adding a new left child to nodes at each step. 
+// When the traversal hits the rightmost node, nodes will hold half of the n total nodes in the tree. Half n is O(n), so our worst case space cost is O(n).
+
 function isBalanced(node) {
   let allDepths = []; // use an array to store the different depths. if there are more than 2 different depths or if there are exactly two depths but their difference is > 1, return false
   let stack = [];
@@ -54,21 +62,6 @@ function isBalanced(node) {
   }
   return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
