@@ -12,6 +12,8 @@
 // a trie is a type of tree where each character in a string corresponds to a node
 // to check if a string is in a trie, descend from root to leaf, checking for a node in the tree corresponding to each character in the string
 
+// https://www.interviewcake.com/question/javascript/compress-url-list?course=fc1&section=system-design
+// TIME: O(26^n) for all URLs of length n or fewer
 class Trie {
   constructor() {
     this.root = {};
@@ -39,3 +41,4 @@ class Trie {
     
   }
 }
+
