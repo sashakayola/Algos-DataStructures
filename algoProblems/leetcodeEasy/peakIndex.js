@@ -15,3 +15,13 @@ var peakIndexInMountainArray = function(A) {
         }
     }
 };
+
+// BETTER WAY: mountain keeps increasing until it doesn't. the point where it decreases, the point before is the peak
+
+var peakIndexInMountainArray = function(A) {
+    for (let i = 1; i < A.length; i++) {
+        if (A[i] < A[i-1]) {
+            return i - 1;
+        }
+    }
+};
