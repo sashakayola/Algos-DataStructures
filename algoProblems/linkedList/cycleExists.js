@@ -11,8 +11,9 @@ class LinkedListNode {
 // have a slow runner moving a pace of one node per iteration and a fast runner moving two nodes per iteration
 // there is a cycle if the slow and fast runner ever end up at the same spot
 // this approach will work for any step size for the fast runner (eventually it will meet or surpass the slow runner https://stackoverflow.com/questions/5130246/why-increase-pointer-by-two-while-finding-loop-in-linked-list-why-not-3-4-5)
+// NOTE: to determine where the cycle starts, once both runners have met each other, reset one to the start of the list. have them both move by one and when they meet again, that is the start of the cycle
 // TIME: O(n)
-// SPACCE: O(1)
+// SPACE: O(1)
 function containsCycle(head) {
   let slow = head;
   let fast = head;
