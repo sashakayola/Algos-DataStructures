@@ -17,3 +17,25 @@ var bstToGst = function(root, arr = [0]) {
    
     return root;
 };
+
+// APPROACH 2
+var bstToGst = function(root) {
+    let sum = 0;
+    sum += DFS(root);
+    
+    function DFS(root) {
+        if (!root) {
+            return;
+        }
+    
+        // post order traversal
+        DFS(root.right);
+        sum += root.val;
+        root.val = sum;
+        DFS(root.left);
+ 
+        return sum;
+    }
+    
+    return root;  
+};
