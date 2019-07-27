@@ -32,8 +32,6 @@ function reverse1(node) {
 }
 
 // APPROACH2 (to reverse linked list out of place)
-// iterate through the linked list and store all the nodes in an array until we reach the end
-// make a new array by popping nodes from the previous nodes array
 function reverse2(node) {
   let newHead = null;
   let previousNodes = [];
