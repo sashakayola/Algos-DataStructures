@@ -2,6 +2,8 @@
 
 // DFS - post order (from largest value in the array to the smallest)
 // have an array where you keep track of the sums (essentially in this problem you just want to know the sum as you go)
+// TIME: O(logn)
+// SPACE: O(n)
 var bstToGst = function(root, arr = [0]) {
     if (!root) {
        return;
