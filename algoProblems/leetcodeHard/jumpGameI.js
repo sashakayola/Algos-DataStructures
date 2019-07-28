@@ -5,7 +5,6 @@
 // SPACE: O(1) constant
 
 function canJump(arr) {
-  let numJumps = 0;
   let currentPoint = 0;
   let lastCurrentPoint = 0;
     
