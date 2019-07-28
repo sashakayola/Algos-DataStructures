@@ -5,14 +5,11 @@
 // TIME: O(n!) because there are n! permutations of a string
 function getPermutations(string) {
   if (string.length <= 1) {
-    console.log('returning', string)
     return new Set([string]);
   }
 
   let allCharsExceptLast = string.slice(0, string.length - 1);
-  console.log('allCharsExceptLast', allCharsExceptLast)
   let lastChar = string[string.length - 1];
-  console.log('lastChar', lastChar)
 
   let allPermsExceptLastChar = getPermutations(allCharsExceptLast);
 
@@ -22,11 +19,7 @@ function getPermutations(string) {
     // the below goes until <= eachPerm.length because need to add the last char to the very end of the word
     for (let i = 0; i <= eachPerm.length; i++) {
       const permutation = eachPerm.slice(0, i) + lastChar + eachPerm.slice(i)
-      // console.log('permutation after adding last char: ', permutation)
-      console.log('eachPerm: ', eachPerm);
-      console.log('last char: ', lastChar)
       allPermutations.add(permutation);
-      console.log('allPermutations', allPermutations)
     }
   })
 
